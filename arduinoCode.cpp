@@ -1,15 +1,26 @@
 /*
- * -----------------------------------------------------------------------------------------
- *             MFRC522      Arduino       Arduino   Arduino    Arduino          Arduino
- *             Reader/PCD   Uno/101       Mega      Nano v3    Leonardo/Micro   Pro Micro
- * Signal      Pin          Pin           Pin       Pin        Pin              Pin
- * -----------------------------------------------------------------------------------------
- * RST/Reset   RST          9             5         D9         RESET/ICSP-5     RST
- * SPI SS      SDA(SS)      10            53        D10        10               10
- * SPI MOSI    MOSI         11 / ICSP-4   51        D11        ICSP-4           16
- * SPI MISO    MISO         12 / ICSP-1   50        D12        ICSP-1           14
- * SPI SCK     SCK          13 / ICSP-3   52        D13        ICSP-3           15
- */
+  -----------------------------------------------------------------------------------------
+              MFRC522      Arduino       Arduino   Arduino    Arduino          Arduino
+              Reader/PCD   Uno/101       Mega      Nano v3    Leonardo/Micro   Pro Micro
+  Signal      Pin          Pin           Pin       Pin        Pin              Pin
+  -----------------------------------------------------------------------------------------
+  RST/Reset   RST          9             5         D9         RESET/ICSP-5     RST
+  SPI SS      SDA(SS)      10            53        D10        10               10
+  SPI MOSI    MOSI         11 / ICSP-4   51        D11        ICSP-4           16
+  SPI MISO    MISO         12 / ICSP-1   50        D12        ICSP-1           14
+  SPI SCK     SCK          13 / ICSP-3   52        D13        ICSP-3           15
+
+  Using Arduino Mega for following code
+  Used sensor / IO devices
+  1. SSD1306 OLED : SDA(20) SCL(21)
+  2. MFRC522 RFID I/O : SDA(53) SCK(52) MOSI(51) MISO(50) IRQ(-) RST(5)
+  3. Wifi module ESP8266: RX(TX) TX(RX) CH_PD(High)
+  4. Potentiometer: (A5)
+  5. RGB LED x 1: R(A0) G(A1) B(A2)
+
+  Flow: Check Potentiometer -> Check RFID -> Check tag data -> Check online status -> upload(if online) -> display -> back to head.
+
+*/
 
 #include <SPI.h>
 #include <MFRC522.h>
