@@ -1,0 +1,20 @@
+{
+  "name": "ee3070",
+  "version": "1.0.0",
+  "description": "",
+  "main": "clients.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "firebase": "^8.2.7",
+    "multer": "^1.4.2",
+    "thingspeakclient": "^0.4.0"
+  }
+}

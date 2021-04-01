@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+
+        .container.ccw {
+          max-width: 1600px;  
+        }
+
+        h1{
+          font-size: 3vh;
+          color: #FFFFFF;
+        }
+
+        h2{
+          font-size: 2.3vh;
+          color: #FFFFFF;
+        }
+
+        p{
+          color: #FFFFFF;
+        }
+
+        body { 
+          padding-top: 70px; 
+        }
+
+        .leftMess{
+          text-align: left;
+          padding-left:5%;
+        }
+
+        .rightMess{
+          text-align: right;
+          padding-right:5%;
+        }   
+
+        .lineClass{
+          text-align: center;
+          width : 90%;
+          height : 1.5px;
+          background-color: white;
+        }
+
+    </style>
+   
+    <title>Project Transparency</title>
+    <link rel="icon" href="img/losdfgo1.png" type="image/x-icon">
+
+  </head>
+  <body style="background-color:#171717 ;">
+
+    <header>
+      <nav class="navbar fixed-top navbar-expand-md bg-dark navbar-dark scrolling-navbar shadow">
+        
+        <a class="navbar-brand" href="index.html">
+          <h4>
+          <img src="img/losdfgo1.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          Transparency
+          </h4>
+        </a>
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#shoppingCart"><i class="fas fa-tags"></i> Shopping cart</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Info</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#infoProduct"><i class="fas fa-database"></i> Product information</a>
+                <a class="dropdown-item" href="#infoOther"><i class="fas fa-link"></i> Other info</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#checkOut"><i class="fas fa-barcode"></i> Check out</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="loginCartDom"></a>
+                 
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="loginMemberDom"></a>        
+            </li>
+        
+          </ul>
+        </div>  
+      </nav>
+    </header>
+  
+
+    <div class="container ccw">
+      
+      <section id="shoppingCart" >
+
+        <div style="text-align: center;">
+
+          <div class="p-2 mb-2 bg-dark" style="color: white; margin-top: 20px;">
+          <h1><i class="fas fa-shopping-cart"></i> Current Shopping Cart</h1>
+          </div>
+          
+            <div id="cartList">
+
+              <br>
+
+            </div>                  
+
+          
+
+        </div>
+        
+      </section>
+
+      <section id="infoProduct">
+        
+        <div style="text-align: center;">
+
+          <div class="p-2 mb-2 bg-dark" style="color: white; margin-top: 20px;">
+          <h1><i class="fas fa-tags"></i> Product info</h1>
+          </div>
+
+          
+      
+          <div id="ProductInfoList">
+
+            <br>
+
+          </div>  
+
+          <div id="pic"></div>
+
+          
+
+
+        </div>
+        
+      </section>
+
+      <section id="infoOther">
+        
+        <div style="text-align: center;">
+
+          <div class="p-2 mb-2 bg-dark" style="color: white; margin-top: 20px;">
+          <h1><i class="fas fa-bullhorn"></i> Other info</h1>
+          </div>
+
+        </div>
+
+        <h1 id="points" class="leftMess"></h1>
+        
+      </section>
+
+      <section id="checkOut">
+        
+        <div style="text-align: center;">
+
+          <div class="p-2 mb-2 bg-dark" style="color: white; margin-top: 20px;">
+          <h1><i class="fas fa-cash-register"></i> Check out</h1>
+          </div>
+          <br>
+          <!--
+          <button type="button" class="btn btn-light btn-lg" onclick='openModalCart()'> demo modal cart</button>
+          <br><br>
+          <button type="button" class="btn btn-light btn-lg" onclick='openModalMember()'> demo modal member</button>
+          <br><br>
+          -->
+          <button type="button" class="btn btn-light btn-lg" onclick='openModalQR()'> Check out</button>
+          <br>
+               
+
+        </div>
+        
+      </section>
+
+      
+        
+      
+      <!-- Modal Cart -->
+      <div class="modal fade" id="modalCart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h1 class="modal-title" id="exampleModalLabel" style="color: black;">Please input a 6 digit numbers</h1>
+              <button type="button" class="close" aria-label="Close"  onclick="closeModal()">
+                <!--
+                <span aria-hidden="true">×</span>
+                -->
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <h2 style="color: black;">6 number digit should be displayed on cart OLED</h2>
+             
+              <input type="text" class="form-control" id="inputDigit" style="width: 60%;" maxlength="6">
+              <h5 id="errorMessageBox"></h5>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="location.href='index.html';">Return</button>
+              <button type="button" class="btn btn-primary" id="enterValue">Enter</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    <div class="modal-backdrop fade show" id="backdropCart"  style="display: none;"></div>
+
+    <!-- Modal Member -->
+    <div class="modal fade" id="modalMember" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel" style="color: black;">Membership Login</h1>
+            <!--
+            <button type="button" class="close" aria-label="Close"  onclick="closeModal()">
+              
+              <span aria-hidden="true">×</span>
+              
+            </button>
+            -->
+          </div>
+
+          <div class="modal-body">
+            <h2 style="color: black;">Please enter your phone numbers.</h2>
+            <input type="text" class="form-control" id="inputDigitMember" style="width: 60%;" maxlength="8">
+            <h5 id="errorMessageBoxMember"></h5>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModalMember()">non-members</button>
+            <button type="button" class="btn btn-primary" id="enterValueMember">Enter</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <div class="modal-backdrop fade show" id="backdropMember"  style="display: none;"></div>
+
+  <!-- Modal QR -->
+  <div class="modal fade" id="modalQR" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel" style="color: black;">Scan QR Code</h1>
+          <button type="button" class="close" aria-label="Close"  onclick="closeModalQR()">
+            <span aria-hidden="true">×</span>         
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div id="qrPol"></div>
+          <h1 style="color: black;">Or type below code</h1>
+          <h1 style="color: black;" id="modelQRcode"></h1>
+          
+        </div>
+
+        <div class="modal-footer">
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+<div class="modal-backdrop fade show" id="backdropQR"  style="display: none;"></div>
+
+
+      <br><br><br><br><br><br>
+       
+
+    </div>
+
+
+    <div class="footer fixed-bottom">
+
+      <nav class="navbar navbar-expand-sm navbar-light bg-dark">
+        
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <h1 id="downMessage"></h1>    
+          </li>
+          
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <h1 id="totalprice"> </h1> 
+          </li>
+
+      </ul>
+
+
+      </nav>
+    </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+    <!-- FireBase js -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-storage.js"></script>
+
+    <script src="https://kit.fontawesome.com/79eb29e59b.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Main config IP -->
+    <script src="overallConfig.js"></script>
+
+    <!-- Main config -->
+    <script src="mainConfig.js"></script>
+    <!-- Modal object of Cart -->
+    <script src="modalCart.js"></script>
+
+    <!-- Modal object of Member -->
+    <script src="modalMember.js"></script>
+
+    <!-- Modal object of qr -->
+    <script src="VanillaQR.min.js"></script>
+    <script src="modalQR.js"></script>
+
+    <!-- upload block -->
+    <script src="updateRDB.js"></script>
+
+    <!-- add Drop product -->
+    <script src="addDrop.js"></script>
+
+  </body>
+</html>

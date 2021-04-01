@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <style>
+
+        .container.ccw {
+          max-width: 1400px;  
+        }
+
+        h1,h2,h3{
+          color: #FFFFFF;
+        }
+
+        h1{
+          font-size: 30px;
+        }
+
+        .leftMess{
+          text-align: left;
+          padding-left:5%;
+        }
+
+        .rightMess{
+          text-align: right;
+          padding-right:5%;
+        }
+
+        .lineClass{
+          text-align: center;
+          width : 90%;
+          height : 1.5px;
+          background-color: white;
+        }
+
+        body { 
+          padding-top: 70px; 
+        }
+        
+        #blockTwo {
+          display:none;
+        }
+
+        #blockLoading {
+          display:none;
+        }
+
+        .spinner-border {
+          width: 250px;
+          height: 250px;
+          
+        }
+
+        
+
+
+    </style>
+   
+    <title>Project Transparency check out</title>
+    <link rel="icon" href="img/losdfgo1.png" type="image/x-icon">
+
+  </head>
+  <body style="background-color:#171717 ;">
+
+    <header>
+      <nav class="navbar fixed-top navbar-expand-md bg-dark navbar-dark scrolling-navbar shadow">
+        
+        <a class="navbar-brand" >
+          <h4>
+          <img src="img/losdfgo1.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          Check Out
+          </h4>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item">       
+              <a class="nav-link">Welcome!</a>
+            </li>
+           
+            <li class="nav-item">
+            </li>
+        
+          </ul>
+        </div> 
+  
+        
+        </div>  
+      </nav>
+    </header>
+  
+
+    <div class="container ccw">
+
+        <br><br>
+        <div style="text-align: center;" id="blockOne">
+            <h1 style="font-size:60px"><i class="fas fa-qrcode" style="font-size:50px; color:white;"></i> Enter your cart code</h1>
+            <br>
+            <input type="text"  id="inputCode" style="width: 360px; height: 100px; font-size:100px;" maxlength="6">
+            <br>
+            <h1 style="font-size:40px" id="inuptErrorMessage"></h1>
+            
+        </div>
+
+        <div id="blockLoading" class="container ccw">
+
+          <div class="text-center">
+
+            <div class="spinner-border text-light" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <br><br>
+            <h2>Loading...</h2>
+          </div>
+          
+
+        </div>
+
+
+
+
+        <div style="text-align: left;" id="blockTwo" class="container ccw">
+            <button type="button" class="btn btn-light btn-lg" id="goMainPage">Back</button>
+
+            <h1 style="font-size:40px" id="welcomeMessage"></h1>
+            <br>
+            <h1 style="font-size:40px">Check List:</h1>
+
+            <div id="listt"></div>
+            <h1 id="totalMessage" class="rightMess"></h1>
+            <br>
+
+            <div class="rightMess">
+              <button type="button" class="btn btn-light btn-lg " id="openPayment">Payment</button>
+            </div>
+            
+            <br><br><br>
+            
+
+            
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="footer fixed-bottom">
+
+      <nav class="navbar navbar-expand-sm navbar-light bg-dark">
+        
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <h1 style="font-size: 3vh;" id="tt"> </h1>    
+          </li>       
+        </ul>
+
+      </nav>
+    </div>
+
+    <!-- Model Check-->
+    <div class="modal fade" id="modalCheck" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+  
+          <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel" style="color: black;">Payment select</h1>
+            <button type="button" class="close" aria-label="Close"  onclick="closeModalCheck()">
+              <span aria-hidden="true">×</span>         
+            </button>
+          </div>
+  
+          <div class="modal-body">
+            <h2 style="color: black;">Select your payment </h2>
+            <br>
+
+            <div id="buttonSection">
+              <button type="button" class="btn btn-warning" style="font-size: 25px;" id="goPay0" onclick="checkOut()"><i class="fas fa-hockey-puck"></i> Hotopus</button> &nbsp;
+              <button type="button" class="btn btn-success" style="font-size: 25px;" id="goPay1" onclick="checkOut()"><i class="fas fa-comment-dollar"></i> He Chat</button> &nbsp;
+              <button type="button" class="btn btn-primary" style="font-size: 25px;" id="goPay2" onclick="checkOut()"><i class="fab fa-alipay"></i> Blipay</button> &nbsp;
+              <br><br>
+              <button type="button" class="btn btn-primary" style="font-size: 25px;" id="goPay3" onclick="checkOut()"><i class="fab fa-cc-mastercard"></i> Hisa</button> &nbsp;
+              <button type="button" class="btn btn-warning" style="font-size: 25px;" id="goPay4" onclick="checkOut()"><i class="fab fa-cc-mastercard"></i> Rastercard</button> &nbsp;
+              
+
+            </div>
+
+            <div id="buttonLoading" style="display:none;">
+
+              <div class="spinner-border text-dark" role="status" style="color: black;">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <br><br>
+              <h3 style="color: black;">Loading...</h3>
+
+            </div>
+
+          </div>
+  
+          <div class="modal-footer">
+            
+  
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  <div class="modal-backdrop fade show" id="backdropCheck"  style="display: none;"></div>
+
+   
+
+ 
+
+    
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+    <!-- FireBase js -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-storage.js"></script>
+
+    <script src="https://kit.fontawesome.com/79eb29e59b.js" crossorigin="anonymous"></script>
+    <script src="ipconfigg.js"></script>
+    <script src="checkout.js"></script>
+    <script src="modalCheck.js"></script>
+
+  </body>
+</html>
