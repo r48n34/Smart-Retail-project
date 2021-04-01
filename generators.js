@@ -16,26 +16,6 @@ const lable = ["fruit", "fruit", "candy","stationery", "soft_drink",
                "pet","pet"];
 
 
-//blockInfo in clients
-//when user success typing id to this web, a info block will send to db.
-let infoBlockClients = {
-    cartid: "",
-    status: 0, // 0 = processing , 1 = done, -1 = cancel
-    memberId: "", // phone number
-    memberName: "", //name 
-};
-
-class infoBlock{ //blockInfo in class
-
-    constructor(cartid, status, memberId, memberName) {
-        this.cartid = cartid;
-        this.status = status;
-        this.memberId = memberId;
-        this.memberName = memberName;
-    }
-
-}
-
 class ProductObj {
 
     constructor(id, name, price, description, brand, image, type) {
@@ -62,11 +42,9 @@ function genId(length) { //generate id
     return result;
 }
 
-
 function rndInt(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
-
 
 function result(len) { // len = length of list
 
@@ -89,7 +67,7 @@ function result(len) { // len = length of list
 }
 
 console.log(result(10)); // normal class object
-//console.log(JSON.stringify(rngList));
+
 
 /*
 // download function
