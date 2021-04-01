@@ -14,6 +14,7 @@ improve both consumer shopping quality and business data automation.
 ## Preview
 <img src="https://github.com/r48n34/Smart-Retail-project/blob/main/imgg/reg.gif" />
 <img src="https://github.com/r48n34/Smart-Retail-project/blob/main/imgg/cart.gif" />
+<img src="https://github.com/r48n34/Smart-Retail-project/blob/main/imgg/his.gif" />
 
 ## Declare use
 ### Clients:  
