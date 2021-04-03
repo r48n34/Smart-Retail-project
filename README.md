@@ -36,7 +36,7 @@ Step 1. Create a `Firebase project`, replace all the section that require Fireba
 Step 1.1 Create a `Thinkspeak channel` for arduino data communication.  
 Step 2. Install `Node.js` to your devices.   
 Step 3. Active `server.js` by `npm start` or `node server.js`.  
-Step 4. Replace your ip in `pwa_company/ipconfigg.js` and `pwa_clients/overallConfig.js` as the node server location.
+Step 4. Replace your ip in `pwa_company/ipconfigg.js` and `pwa_clients/overallConfig.js` as the node server location.  
 Setp 4.1 Replace your Thinkspeak channel id and write API in `server.js`.  
 Step 5. Open `pwa_clients/index.html` for user.  
 
