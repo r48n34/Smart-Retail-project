@@ -32,7 +32,7 @@ ThinkSpeak
 Using `gh repo clone r48n34/Smart-Retail-project`  
 
 ## install
-Step 1. Create a `Firebase project`, replace all the section that require Firebase data.
+Step 1. Create a `Firebase project`, replace all the section that require Firebase data.  
 Step 1.1 Create a `Thinkspeak channel` for arduino data communication.  
 Step 2. Install `Node.js` to your devices.   
 Step 3. Active `server.js` by `npm start` or `node server.js`.  
