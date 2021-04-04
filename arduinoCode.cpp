@@ -72,7 +72,6 @@ const int blue_light_pin = A2;
 
 bool isAdd = true;
 
-
 struct ProductInfo
 {
    String product; // product id

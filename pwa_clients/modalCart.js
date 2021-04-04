@@ -68,12 +68,10 @@ function checkDigit(){ //current matcher = 000000, no db now
       loginCartDom.innerHTML = "Cart login: Yes (" + inputDigit.value + ")";
       infoBlock.cartid = inputDigit.value;
       modelQRcode.innerHTML = inputDigit.value;
-
       
       addDropOnline();  //adddrop.js enable product
       closeModalCart(); // close window
       openModalMember(); //open window for members
-
 
        
   })

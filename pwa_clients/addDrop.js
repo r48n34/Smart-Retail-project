@@ -82,10 +82,7 @@ function addDropOnline(){
     drawDom();
   }
 }
-
-
   
-
 
 function cl(){
   cartList.innerHTML = "";
@@ -108,23 +105,25 @@ function updateListSub(obj){ //sub obj to array then update dom
     }
 
   }
-  //not found
 
+  //not found
   console.log("Not found.")
 
 }
-
-
 
 function updateListAdd(obj){ //add obj to array then update dom
   let newObj = {...obj};
 
   for(let i = 0; i<arr.length; i++){ // found same
+
     if(arr[i].id == newObj.id){      
+      
       arr[i].quantity += 1;
+
       drawDom();     
       return;
     }
+
   }
 
   //unique item
@@ -133,7 +132,7 @@ function updateListAdd(obj){ //add obj to array then update dom
 
 }
 
-function drawDom(){ //dummest function I have created for DOM-tree but just leave it here, duun care if it's work
+function drawDom(){ 
 
   cartList.innerHTML = ""; //Shopping Cart div
   ProductInfoList.innerHTML = ""; //product info div
@@ -166,8 +165,6 @@ function drawDom(){ //dummest function I have created for DOM-tree but just leav
     line.classList.add("lineClass");
     cartList.appendChild(line); 
 
-
-
     //   product info   //
 
     // name //
@@ -195,10 +192,6 @@ function drawDom(){ //dummest function I have created for DOM-tree but just leav
 
     // <br> to each product //
     ProductInfoList.innerHTML += "<br>";
-
-
-    
-
 
   }
 

@@ -31,7 +31,6 @@ class ProductList{ //offline list info
 
     }
 
-
 }
 
 var firebaseConfig = { // your information can be seen from firebase 
@@ -53,7 +52,6 @@ var dbfs = firebase.firestore();
 
 //var
 let total = 0; //temp value
-//total = Math.floor(Math.random() * (1000 - 50) ) + 50 ;
 let loginCart = false; // is cart register?
 let loginMember = false;// is member login?
 

@@ -1,9 +1,17 @@
 //In input password incorrect, all recived data should be {}
 //Initial data to be input
-const accessId = "yolo123"; //Input the access code
-
 //automation variables
-let accessCode = { pw: accessId };
+let accessCode = { pw: "0" };
+
+console.log("Welcome to comsole system.");
+console.log("Remember to inupt your password with function enterPass()");
+console.log("Example: enterPass(\"yolo123\")");
+console.log("----------------------------");
+
+function enterPass(pass){
+  accessCode.pw = pass;
+  console.log(pass);
+}
 
 function memList() {
   //function to get member list
