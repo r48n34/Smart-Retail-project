@@ -1,0 +1,35 @@
+{
+  "000000" : {
+    "ProductList" : {
+      "empty" : true
+    },
+    "infoBlock" : {
+      "cartid" : "000000",
+      "memberId" : "",
+      "memberName" : "",
+      "status" : 0
+    }
+  },
+  "111111" : {
+    "ProductList" : {
+      "empty" : true
+    },
+    "infoBlock" : {
+      "cartid" : "111111",
+      "memberId" : "",
+      "memberName" : "",
+      "status" : 1
+    }
+  },
+  "222222" : {
+    "ProductList" : {
+      "empty" : true
+    },
+    "infoBlock" : {
+      "cartid" : "222222",
+      "memberId" : "",
+      "memberName" : 0,
+      "status" : 1
+    }
+  }
+}
