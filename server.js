@@ -7,6 +7,8 @@ Mainly in three parts:
 
 Write functions are mainly implemented on server side
 Read functions are implemented on both side
+Warning: All Firebase / Thinkspeak channel & data are eliminated due to privacy and security.
+Apply your own DB config / channel before used.
 */
 
 var express = require('express');
@@ -45,7 +47,7 @@ class CartInfo{
    }
 }
 
-class ProductList{ //offline list info
+class ProductList{ //offline list info, adapted for online product info
         
    constructor(id, name, price, quantity, brand, description, type, image){
          

@@ -69,9 +69,9 @@ function checkDigit(){ //current matcher = 000000, no db now
       infoBlock.cartid = inputDigit.value;
       modelQRcode.innerHTML = inputDigit.value;
       
-      addDropOnline();  //adddrop.js enable product
+      addDropOnline();  // adddrop.js enable product
       closeModalCart(); // close window
-      openModalMember(); //open window for members
+      openModalMember(); // modalMemebr.js open window for members
 
        
   })
