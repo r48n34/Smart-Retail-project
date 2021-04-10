@@ -529,7 +529,7 @@ function getValueThinkSpeak(){ //Get data from thinkSpeak
       resp.on('end', () => {
          let k = JSON.parse(data);
  
-         let res = k.feeds[result-1].field2; // remember to change field2 to 1 if using field 1
+         let res = k.feeds[result-1].field2; // remember to change field2 to fieldn if using field n, n = number
          console.log(res);
 
          if(res === undefined || res === null){
