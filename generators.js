@@ -49,17 +49,10 @@ function rndInt(min, max) {
 function result(len) { // len = length of list
 
     let rngList = [];
-    //let name = [...product];
-    //let lab = [...lable];
 
     for(let i = 1; i < len + 1; i++){
 
-        //let num = rndInt(0, product.length);
-        //let n = product.splice(num, 1) + "";
-        //let l = lab.splice(num, 1) + "";
-
         //possibility of uid -> genId(5) = 916132832 = ~ 9.1*10^8 
-
         rngList.push( new ProductObj(genId(5), product[i], rndInt(1, 600), genId(15), genId(5), "https://github.com/r48n34/r48n34.github.io/blob/master/img/code-1.png", lable[i]) );
     }
 

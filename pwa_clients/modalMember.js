@@ -6,67 +6,67 @@ const errorMessageBoxMember = document.getElementById("errorMessageBoxMember"); 
 
 // display the member modal
 function openModalMember() {
-  document.getElementById("backdropMember").style.display = "block"
-  modalMember.style.display = "block"
-  modalMember.className += "show"
+    document.getElementById("backdropMember").style.display = "block"
+    modalMember.style.display = "block"
+    modalMember.className += "show"
 }
 
 // close the display of member modal
 function closeModalMember() {
-  document.getElementById("backdropMember").style.display = "none"
-  modalMember.style.display = "none"
-  modalMember.className += modalMember.className.replace("show", "")
+    document.getElementById("backdropMember").style.display = "none"
+    modalMember.style.display = "none"
+    modalMember.className += modalMember.className.replace("show", "")
 }
 
-enterValueMember.onclick = function(){
-  checkMember();
+enterValueMember.onclick = function () {
+    checkMember();
 }
 
 //open server.js (node.js) to run this function [npm start]
-function checkMember(){
-  
-  if(inputDigitMember.value.length < 8 ){ //input number < 8
-    errorMessageBoxMember.innerHTML = "Invalid input."
-    return;
-  } 
+function checkMember() {
 
-  errorMessageBoxMember.innerHTML = "loding..."
-
-  var data = {phoneNumber: inputDigitMember.value}; //request body
-
-  fetch(serverLocation + '/validMember',
-  {method: 'POST',
-  body: JSON.stringify(data),
-  headers: new Headers({'Content-Type': 'application/json'})
-  })
-  .then(function(response) {
-      return response.text();
-  })
-  .then(function(e) {
-
-      if(e == "0"){ // recive = "0" => not found
-        console.log(e);
-        errorMessageBoxMember.innerHTML = "DB can't find the record. <br> Please try again."
+    if (inputDigitMember.value.length < 8) { //input number < 8
+        errorMessageBoxMember.innerHTML = "Invalid input."
         return;
-      }
+    }
 
-      let obj = JSON.parse(e);
-      console.log(obj);          
-      console.log("welcome!")
+    errorMessageBoxMember.innerHTML = "loding..."
 
-      loginMember = true;
-      infoBlock.memberId = obj.phoneNumber;
-      infoBlock.memberName = obj.name;
+    var data = { phoneNumber: inputDigitMember.value }; //request body
 
-      downMessage.innerHTML = "Welcome, " + obj.name + "!"
-      loginMemberDom.innerHTML = "Member login: Yes";
-      errorMessageBoxMember.innerHTML = "";
+    fetch(serverLocation + '/validMember', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: new Headers({ 'Content-Type': 'application/json' })
+    })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (e) {
 
-      closeModalMember(); //close window
-      uploadBlock(); // updateRDB.js for upload block to server
-  })
-  .catch(function(err) {
-    errorMessageBoxMember.innerHTML = "Server error. Please try again."
-  });
-  
+            if (e == "0") { // recive = "0" => not found
+                console.log(e);
+                errorMessageBoxMember.innerHTML = "DB can't find the record. <br> Please try again."
+                return;
+            }
+
+            let obj = JSON.parse(e);
+            console.log(obj);
+            console.log("welcome!")
+
+            loginMember = true;
+            infoBlock.memberId = obj.phoneNumber;
+            infoBlock.memberName = obj.name;
+
+            downMessage.innerHTML = "Welcome, " + obj.name + "!"
+            loginMemberDom.innerHTML = "Member login: Yes";
+            errorMessageBoxMember.innerHTML = "";
+
+            closeModalMember(); //close window
+            uploadBlock(); // updateRDB.js for upload block to server
+        })
+        .catch(function (err) {
+            errorMessageBoxMember.innerHTML = "Server error. Please try again."
+        });
+
 }
